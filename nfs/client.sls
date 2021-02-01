@@ -5,7 +5,7 @@ nfs_client_packages:
   pkg.installed:
   - names: {{ client.pkgs }}
 
-{%- for mount_name, mount in client.mount.iteritems() %}
+{%- for mount_name, mount in client.mount.items() %}
 
 {{ mount.path|replace("/","_") }}_directory:
   file.directory:
